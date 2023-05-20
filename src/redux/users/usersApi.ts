@@ -23,7 +23,7 @@ export const usersApi = createApi({
         method: "PUT",
         data: patch,
       }),
-      async onQueryStarted({ id, ...patch }, { queryFulfilled, dispatch }) {
+      async onQueryStarted({ id }, { queryFulfilled, dispatch }) {
         try {
           const { data: updatedProduct } = await queryFulfilled;
           dispatch(

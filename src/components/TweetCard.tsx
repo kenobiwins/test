@@ -1,13 +1,13 @@
+import { FC } from "react";
+import { styled } from "styled-components";
+
 import image from "assets/image.png";
 import retinaImage from "assets/2x-image.png";
 import { ICON_NAMES, Icon } from "kit/Icon";
-import { styled } from "styled-components";
-import { FC } from "react";
 import { IUser } from "types/users";
 import { TextH2, TextH3, CustomButton } from "kit";
 import { formatField } from "utils/index";
 import { useToggleFollowMutation } from "store/users/usersApi";
-import frame from "assets/frame.png";
 import { AnimateWrapper } from ".";
 
 type TweetCardProps = {
@@ -41,25 +41,25 @@ export const TweetCard: FC<TweetCardProps> = ({ user }) => {
         <InfoGroupWrapper>
           <AvatarGroup>
             <AvatarWrapper>
-              <img src={avatar} alt={`avtar ${user} profile` } />
+              <img src={avatar} alt={`avtar ${userName} profile`} />
             </AvatarWrapper>
-            <Chip/>
+            <Chip />
           </AvatarGroup>
           <InfoGroup>
-            <TextH2>{formatField(tweets, "tweets")}</TextH2>
-            <TextH3>{formatField(followers, "followers")}</TextH3>
+            <TextH2>{formatField(tweets, 'tweets')}</TextH2>
+            <TextH3>{formatField(followers, 'followers')}</TextH3>
             {/* <TextH3>{formatField(userName, "userName")}</TextH3> */}
           </InfoGroup>
           <CustomButton
             isLoading={isLoading}
             isActive={follow}
-            title={follow ? "Following" : "Follow"}
+            title={follow ? 'Following' : 'Follow'}
             onClick={() => handleFollow(id)}
           />
         </InfoGroupWrapper>
       </Card>
     </AnimateWrapper>
-  );
+  )
 };
 
 const Card = styled.div(({ theme }) => ({
@@ -87,9 +87,9 @@ const CardImage = styled.img({
   margin: "auto",
 });
 
-const AvatarGroup = styled.div(({ theme }) => ({
+const AvatarGroup = styled.div({
   position: "relative",
-}));
+});
 
 const AvatarWrapper = styled.div(({ theme }) => ({
   position: "relative",
