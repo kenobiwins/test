@@ -18,6 +18,6 @@ export default defineConfig({
     },
   },
   build: {
-    assetsDir: './dist',
+    outDir: './dist',
   },
 })
