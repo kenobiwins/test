@@ -10,7 +10,7 @@ import { store } from "redux/store/store";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="tweets">
         <ThemeManagerProvider>
           <App />
           <GlobalStyle />

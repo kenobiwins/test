@@ -17,4 +17,7 @@ export default defineConfig({
       kit:"/src/kit"
     },
   },
+  build: {
+    outDir:'./dist'
+  }
 });
