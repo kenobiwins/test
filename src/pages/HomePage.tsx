@@ -5,9 +5,9 @@ export const HomePage = () => {
       <div>
         <TextH2>
           My name is Max, nice to meet you,
-          <a href="https://www.linkedin.com/in/maxim-sidorenko/" target="_blank">
+          {/* <a href="https://www.linkedin.com/in/maxim-sidorenko/" target="_blank">
             click
-          </a>
+          </a> */}
         </TextH2>
       </div>
     );
