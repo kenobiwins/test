@@ -13,7 +13,7 @@ type tweetProps = {
 
 export const Tweet: FC<tweetProps> = ({ tweet }) => {
   const { avatar, followers, follow, emoji, id, lastTweet, user: userName } = tweet
-  const [updateFollow] = useToggleFollowMutation()
+  const [updateFollow, { isLoading }] = useToggleFollowMutation()
 
   return (
     <TweetStyled>
@@ -25,7 +25,8 @@ export const Tweet: FC<tweetProps> = ({ tweet }) => {
           </TextH2>
         </UserWrapper>
         <CustomButton
-          title={'Unfollow'}
+          title={isLoading ? '...Loading' : 'Unfollow'}
+          isLoading={isLoading}
           onClick={() => handleToggleFollow({ id, follow, followers }, updateFollow)}
         />
       </InfoGroup>

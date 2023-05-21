@@ -10,21 +10,20 @@ export const HomePage = () => {
   const { data: usersData } = useGetUsersQuery()
   const filteredData = usersData?.filter((user) => user.follow)
 
+  const shouldRender = filteredData && filteredData?.length > 0
   return (
-    filteredData && (
-      <div>
-        <Title as={'h1'}>The feed</Title>
-        <ContentWrapper>
-          {filteredData?.length > 0 ? (
-            filteredData?.map((tweet) => {
-              return <Tweet key={tweet.id} tweet={tweet} />
-            })
-          ) : (
-            <LinkText to={ROUTES.TWEETS}>start following someone</LinkText>
-          )}
-        </ContentWrapper>
-      </div>
-    )
+    <div>
+      <Title as={'h1'}>The feed</Title>
+      <ContentWrapper>
+        {shouldRender ? (
+          filteredData?.map((tweet) => {
+            return <Tweet key={tweet.id} tweet={tweet} />
+          })
+        ) : (
+          <LinkText to={ROUTES.TWEETS}>start following someone</LinkText>
+        )}
+      </ContentWrapper>
+    </div>
   )
 }
 
