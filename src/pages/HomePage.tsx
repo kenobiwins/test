@@ -29,6 +29,7 @@ export const HomePage = () => {
 
 const ContentWrapper = styled.div(({ theme }) => ({
   display: 'grid',
+  gridTemplateRows: 'repeat(auto-fit,170px)',
   gap: theme.px.x2,
   height: '75vh',
   overflow: 'auto',
