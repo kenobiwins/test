@@ -1,7 +1,7 @@
-import { FC, Suspense } from "react";
-import { Outlet } from "react-router-dom";
-import { AnimateWrapper, Navigation } from ".";
-import { styled } from "styled-components";
+import { FC, Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
+import { AnimateWrapper, Navigation } from '.'
+import { styled } from 'styled-components'
 
 export const Layout: FC = () => {
   return (
@@ -24,8 +24,8 @@ export const Layout: FC = () => {
         <Container></Container>
       </footer>
     </>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   margin: auto;
@@ -42,13 +42,14 @@ const Container = styled.div`
   @media screen and (min-width: 1200px) {
     width: 1200px;
   }
-`;
+`
 
 const MainContainer = styled(Container)(({ theme }) => ({
-  display: "grid",
+  display: 'grid',
   gap: theme.px.x4,
-}));
+}))
 
 const Header = styled.header(({ theme }) => ({
-  marginBottom: theme.px.x2 + "px",
-}));
+  padding: theme.px.x2,
+  marginBottom: theme.px.x1 ,
+}))

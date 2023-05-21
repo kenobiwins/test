@@ -82,10 +82,13 @@ export const TweetsPage = () => {
   )
 }
 
-const ContentWrapper = styled.div({
+const ContentWrapper = styled.div(({ theme }) => ({
   display: 'grid',
   gridAutoFlow: 'column',
-})
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: theme.px.x2,
+}))
 
 const Instruments = styled.div({
   display: 'flex',
