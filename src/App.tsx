@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="" element={<Layout />}>
         <Route index path={ROUTES.MAIN} element={<HomePage />} />
         <Route path={ROUTES.TWEETS} element={<TweetsPage />} />
         <Route path="*" element={<Navigate to={'/'} />} />
