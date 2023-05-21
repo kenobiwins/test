@@ -7,15 +7,15 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeManagerProvider, GlobalStyle } from "theme";
 import { store } from "redux/store/store";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="">
+      <BrowserRouter basename="tweets">
         <ThemeManagerProvider>
           <App />
           <GlobalStyle />
         </ThemeManagerProvider>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)
