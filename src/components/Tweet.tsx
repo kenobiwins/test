@@ -35,6 +35,7 @@ export const Tweet: FC<tweetProps> = ({ tweet }) => {
 }
 
 const TweetStyled = styled.div(({ theme }) => ({
+  maxHeight: '172px',
   display: 'grid',
   gap: theme.px.x2,
   background: theme.color.cardBg,
