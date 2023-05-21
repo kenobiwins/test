@@ -2,7 +2,7 @@
   "name": "tweets",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://kenobiwins.github.io/tweets",
+  "homepage": "https://kenobiwins.github.io/tweets/",
   "type": "module",
   "scripts": {
     "dev": "vite",
