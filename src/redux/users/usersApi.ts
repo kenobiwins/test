@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 
-import {BASE_URL, axiosBaseQuery} from "redux/store/axiosBaseUrl";
+import {BASE_URL, axiosBaseQuery} from "store/store/axiosBaseUrl";
 import { IUser } from "types/users";
 
 export const usersApi = createApi({

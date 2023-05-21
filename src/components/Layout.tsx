@@ -1,7 +1,9 @@
 import { FC, Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
-import { AnimateWrapper, Navigation } from '.'
 import { styled } from 'styled-components'
+
+import { AnimateWrapper, Navigation } from '.'
+import { TextH2 } from 'kit/Text'
 
 export const Layout: FC = () => {
   return (
@@ -21,7 +23,14 @@ export const Layout: FC = () => {
         </AnimateWrapper>
       </main>
       <footer>
-        <Container></Container>
+        <FooterContainer>
+          <TextH2>
+            My name is Max, nice to meet you,
+            <Link href="https://www.linkedin.com/in/maxim-sidorenko/" target="_blank">
+              click
+            </Link>
+          </TextH2>
+        </FooterContainer>
       </footer>
     </>
   )
@@ -49,7 +58,22 @@ const MainContainer = styled(Container)(({ theme }) => ({
   gap: theme.px.x4,
 }))
 
+const FooterContainer = styled(Container)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: theme.px.x3,
+}))
+
 const Header = styled.header(({ theme }) => ({
   padding: theme.px.x2,
-  marginBottom: theme.px.x1 ,
+  marginBottom: theme.px.x1,
+}))
+
+const Link = styled.a(({ theme }) => ({
+  color: theme.color.accent,
+
+  '&:hover': {
+    color: theme.color.mainText,
+  },
 }))

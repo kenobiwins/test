@@ -1,6 +1,7 @@
-import { Layout } from "./Layout";
-import { Navigation } from "./Navigation";
-import { TweetCard } from "./TweetCard";
-import { AnimateWrapper } from "./AnimateWrapper";
+import { Layout } from './Layout'
+import { Navigation } from './Navigation'
+import { UserCard } from './UserCard'
+import { AnimateWrapper } from './AnimateWrapper'
+import { Tweet } from './Tweet'
 
-export { Layout, Navigation, TweetCard, AnimateWrapper };
+export { Layout, Navigation, UserCard, AnimateWrapper, Tweet }

@@ -8,7 +8,7 @@ import { selectFilteredUsersData } from 'store/users'
 import { changeFilterField, selectFilterValue } from 'store/filterSlice'
 
 import { CustomButton } from 'kit/Button'
-import { TweetCard } from 'components'
+import { UserCard } from 'components'
 import { filterValues, filterValuesType } from 'types/filter'
 import { Dropdown } from 'kit/Dropdown'
 import { ROUTES } from 'routes'
@@ -16,10 +16,13 @@ import { ROUTES } from 'routes'
 export const TweetsPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
   const users = useSelector(selectFilteredUsersData)
   const currentFilterValue = useSelector(selectFilterValue)
+
   const [currentPage, setCurrentPage] = useState(0)
   const [pageCount, setPageCount] = useState(0)
+  
   const itemsPerPage = 3
 
   useEffect(() => {
@@ -58,7 +61,7 @@ export const TweetsPage = () => {
       </Instruments>
       <ContentWrapper>
         {displayedUsers?.map((user) => (
-          <TweetCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} />
         ))}
       </ContentWrapper>
       <Pagination

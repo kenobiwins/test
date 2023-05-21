@@ -1,23 +1,26 @@
-import { TextH2 } from "kit/Text";
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
+
+import { Tweet } from 'components/Tweet'
+import { useGetUsersQuery } from 'store/users'
 
 export const HomePage = () => {
-    return (
-      <div>
-        <TextH2>
-          My name is Max, nice to meet you,
-          <Link href="https://www.linkedin.com/in/maxim-sidorenko/" target="_blank">
-            click
-          </Link>
-        </TextH2>
-      </div>
-    );
+  const { data: usersData } = useGetUsersQuery()
+  const filteredData = usersData?.filter((user) => user.follow)
+
+  return (
+    <div>
+      <ContentWrapper>
+        {filteredData?.map((tweet) => {
+          return <Tweet key={tweet.id} tweet={tweet} />
+        })}
+      </ContentWrapper>
+    </div>
+  )
 }
 
-const Link = styled.a(({ theme }) => ({
-  color: theme.color.accent,
-  
-  "&:hover": {
-    color:theme.color.mainText,
-  },
+const ContentWrapper = styled.div(({ theme }) => ({
+  display: 'grid',
+  gap: theme.px.x2,
+  height: '80vh',
+  overflow: 'auto',
 }))
