@@ -1,4 +1,4 @@
 export enum ROUTES {
-  MAIN = "/home",
+  MAIN = "/",
   TWEETS = "/tweets",
 }
